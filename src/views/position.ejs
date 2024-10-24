@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main class="grid-admin">
+      <div class="content-admin">
+        <%- include('components/menuAdmin') %>
+        <div class="admin-profile">
+          <%- include('components/headerAdmin') %>
+        </div>
+        <div class="content-display">
+          <div class="content-msg">
+            <% if(msgSuccess) { %>
+            <div class="msgSuccess">
+              <%= msgSuccess %> <a href="/position">X</a>
+            </div>
+            <% } %> <% if(msgError) { %>
+            <div class="msgError">
+              <%= msgError %> <a href="/position">X</a>
+            </div>
+            <% } %>
+          </div>
+          <h1>Position</h1>
+          <div class="content-position">
+            <form action="/position/position" method="post">
+              <div class="content-add-position">
+                <h2>Cadastre uma Posição</h2>
+                <div class="cancelar-x" id="cancelar-x">
+                  <a href="#"><i class="bx bxs-x-square"></i></a>
+                </div>
+                <div class="input-position-name">
+                  <input
+                    type="text"
+                    name="position_name"
+                    id="position_name"
+                    placeholder="Nome da Posição"
+                  />
+                </div>
+                <div class="btn-position">
+                  <button>Cadastrar Posição</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="list-position">
+            <% position.forEach(position => { %>
+            <div><%= position.position_name %></div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('components/script') %>
+  </body>
+</html>

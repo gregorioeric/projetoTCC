@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <div class="content-form">
+        <h1>Validando CEP</h1>
+        <form action="/checkCEP" method="post">
+          <div class="input-cep">
+            <label for="user-cep"></label>
+            <input
+              type="text"
+              name="user_cep"
+              class="user-cep"
+              placeholder="Informe seu cep"
+              id="user-cep"
+              maxlength="9"
+            />
+          </div>
+          <div class="content-btn" id="btn-cep">
+            <button>Valida CEP</button>
+          </div>
+          <div class="content-cep">
+            <% if(cep) { %>
+            <div class="msgSuccess"><%= msgSuccessCEP %></div>
+            <div><span>CEP: </span><%= cep.cep %></div>
+            <div><span>Logradura: </span><%= cep.logradura %></div>
+            <div><span>Complemento: </span><%= cep.complemento %></div>
+            <div><span>Bairro: </span><%= cep.bairro %></div>
+            <div><span>Cidade: </span><%= cep.localidade %></div>
+            <div><span>Estado: </span><%= cep.estado %></div>
+            <% } %> <% if(msgErrorCEP) { %>
+            <div class="msgError"><%= msgErrorCEP %></div>
+            <% } %>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <div class="content-form">
+        <h1>Upload de Imagens</h1>
+        <form
+          action="/uploadImages"
+          enctype="multipart/form-data"
+          method="post"
+        >
+          <div class="input-upload">
+            <label for="user-upload"></label>
+            <input
+              type="file"
+              name="user_upload"
+              class="user-upload"
+              id="user-upload"
+              accept="image/*"
+            />
+          </div>
+          <% if(successMessage) { %>
+          <div class="msgSuccess"><%= successMessage %></div>
+          <% } %><% if(errorMessage) { %>
+          <div class="msgError"><%= errorMessage %></div>
+          <% } %>
+          <div class="content-btn" id="btn-cad">
+            <button>Upload</button>
+            <!-- <input type="submit" value="Upload" /> -->
+          </div>
+        </form>
+      </div>
+      <div class="show-images">
+        <div class="group-images">
+          <% results.forEach(e => { %>
+          <div class="image">
+            <img src="<%= e.user_image_name %>" alt="" />
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

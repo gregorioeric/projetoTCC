@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <div class="content-form">
+        <h1>Formulario de Cadastro</h1>
+        <form action="/register" method="post">
+          <div class="input-name input">
+            <label for="user-name"></label>
+            <input
+              type="text"
+              name="user_name"
+              class="user-name"
+              placeholder="Nome completo"
+              id="user-name"
+            />
+            <div class="content-msg">
+              <% if(msgNameError) { %>
+              <div class="msgErrorInput"><%= msgNameError %></div>
+              <% } %>
+            </div>
+          </div>
+          <div class="input-email input">
+            <label for="user-email"></label>
+            <input
+              type="text"
+              name="user_email"
+              class="user-email"
+              placeholder="Digite seu email"
+              id="user-email"
+            />
+            <div class="content-msg">
+              <% if(msgEmailError || msgEmailExists) { %>
+              <div class="msgErrorInput">
+                <%= msgEmailError || msgEmailExists%>
+              </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="input-password input">
+            <label for="user-password"></label>
+            <input
+              type="password"
+              name="user_password"
+              class="user-password"
+              placeholder="Digite uma Senha"
+              id="user-password"
+            />
+            <div class="content-msg">
+              <% if(msgPassError || msgPasswordError) { %>
+              <div class="msgErrorInput">
+                <%= msgPassError || msgPasswordError %>
+              </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="input-confirm-password input">
+            <label for="user-confirm-password"></label>
+            <input
+              type="password"
+              name="userConfirmPassword"
+              class="user-confirm-password"
+              placeholder="Confirmar a Senha"
+              id="user-confirm-password"
+            />
+            <div class="content-msg">
+              <% if(msgPassError) { %>
+              <div class="msgErrorInput"><%= msgPassError %></div>
+              <% } %>
+            </div>
+          </div>
+          <div class="content-btn" id="btn-cad">
+            <button>Cadastro</button>
+          </div>
+          <div class="content-msg">
+            <% if(msgFieldsEmpty) { %>
+            <div class="msgError"><%= msgFieldsEmpty %></div>
+            <% } %>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

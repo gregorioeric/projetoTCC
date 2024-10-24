@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <div class="content-form">
+        <h1>Validando Telefone</h1>
+        <form action="/telefone" method="post">
+          <div class="input-phone">
+            <label for="user-phone"></label>
+            <input
+              type="text"
+              name="user_phone"
+              class="user-phone"
+              placeholder="Informe seu Phone"
+              id="user-phone"
+              maxlength="14"
+            />
+          </div>
+          <% if(msgSuccess) { %>
+          <div class="msgSuccess"><%= msgSuccess %></div>
+          <% } %> <% if(msgError) { %>
+          <div class="msgError"><%= msgError %></div>
+          <% } %>
+          <div class="content-btn" id="btn-cad">
+            <button>Valida Telefone</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

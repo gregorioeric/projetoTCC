@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <section id="home" class="home-page">
+        <div class="search-new">
+          <form>
+            <div class="input-search">
+              <input type="search" name="search" placeholder="Buscar" />
+            </div>
+            <div class="btn-search">
+              <button><i class="bx bx-search-alt-2"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="content-post">
+          <div class="article-post">
+            <div class="img-post">
+              <img src="/img/computer.jpg" alt="" />
+            </div>
+            <div class="desc">
+              <a href="#">
+                <h3>Titulo do post</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus inventore voluptate accusantium labore numquam?
+                  Assumenda, laudantium! Sit iure excepturi, vero quibusdam
+                  sequi praesentium labore laudantium hic nesciunt natus ipsam
+                  asperiores.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="article-post">
+            <div class="img-post">
+              <img src="/img/computer.jpg" alt="" />
+            </div>
+            <div class="desc">
+              <a href="#">
+                <h3>Titulo do post</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus inventore voluptate accusantium labore numquam?
+                  Assumenda, laudantium! Sit iure excepturi, vero quibusdam
+                  sequi praesentium labore laudantium hic nesciunt natus ipsam
+                  asperiores.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="article-post">
+            <div class="img-post">
+              <img src="/img/computer.jpg" alt="" />
+            </div>
+            <div class="desc">
+              <a href="#">
+                <h3>Titulo do post</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus inventore voluptate accusantium labore numquam?
+                  Assumenda, laudantium! Sit iure excepturi, vero quibusdam
+                  sequi praesentium labore laudantium hic nesciunt natus ipsam
+                  asperiores.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="grid">
+          <div class="item item-01">
+            <div>item-01</div>
+            <!-- <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, et
+              perferendis. Nam officia maxime quaerat consequatur, cumque
+              consequuntur error fuga. Qui nemo nulla perspiciatis
+              exercitationem nobis, reiciendis laborum quisquam animi.
+            </div> -->
+          </div>
+          <div class="item item-02">
+            <div>item-02</div>
+          </div>
+          <div class="item item-03">
+            <div>item-03</div>
+          </div>
+          <div class="item item-04">
+            <div>item-04</div>
+          </div>
+          <div class="item item-05">
+            <div>item-05</div>
+          </div>
+          <div class="item item-06">
+            <div>item-06</div>
+          </div>
+        </div>
+      </section>
+      <section id="section-two" class="section-two">
+        <h1>section two</h1>
+        <% pages.forEach(e => { if (e.page_title === 'Second Page Updated') { %>
+        <div><%- e.page_content %></div>
+        <% } }) %>
+      </section>
+      <section id="section-three" class="section-three">
+        <h1>section three</h1>
+        <select name="troca" id="troca">
+          <option value="">Selecione um Alimento</option>
+          <option value="arroz">Arroz</option>
+          <option value="feijao">Feijão</option>
+          <option value="salgado">Salgado</option>
+        </select>
+        <div class="arroz" id="arroz"><h1>Arroz</h1></div>
+        <div class="feijao" id="feijao"><h1>feijao</h1></div>
+        <div class="salgado" id="salgado"><h1>salgado</h1></div>
+      </section>
+      <section id="section-four" class="section-four">
+        <h1>section four</h1>
+      </section>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

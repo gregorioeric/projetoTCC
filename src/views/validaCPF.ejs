@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <div class="content-form">
+        <h1>Validando CPF</h1>
+        <form action="/validacpf" method="post">
+          <div class="input-cpf">
+            <label for="user-cpf"></label>
+            <input
+              type="text"
+              name="user_cpf"
+              class="user-cpf"
+              placeholder="Informe seu CPF"
+              id="user-cpf"
+              maxlength="14"
+            />
+          </div>
+          <% if(message.msgCPF) { %>
+          <div class="msgSuccess"><%= message.msgCPF %></div>
+          <% } %> <% if(message.msgErrorCPF) { %>
+          <div class="msgError"><%= message.msgErrorCPF %></div>
+          <% } %>
+          <div class="content-btn" id="btn-cad">
+            <button>Valida CPF</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>
